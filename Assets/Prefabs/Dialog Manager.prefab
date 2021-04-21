@@ -1,0 +1,88 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &2549399730975634316
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2549399730975634314}
+  - component: {fileID: 2549399730975634317}
+  m_Layer: 0
+  m_Name: Dialog Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2549399730975634314
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549399730975634316}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 373.64532, y: 319.80475, z: 65.75293}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2549399730975634317
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2549399730975634316}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d93fd47d021d48ba8b79f40612718cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textDisplay: {fileID: 0}
+  sentences:
+  - Nothing is in your control.
+  - I'm just trying to get home.
+  - 'What is home? '
+  - I don't have time for this. You're a stranger and I'm late. You're not even a
+    stranger. You're just a thing that appeared. Are you even a thing?
+  - Would you like me to be.
+  - 'Hey, hey, hey, thats for you to figure out. '
+  - Do you want to see something cool?
+  - People are staring. Leave me alone.
+  - (Portal appears)
+  - What is this?
+  - 'Walk into it. '
+  - What is it?
+  - It's a portal
+  - To where?
+  - 'It depends. What have you got to loose? '
+  - My life?
+  - 'You humans are so dramatic. You dont even know what that means. How do you know
+    that it even matters. What if you are created and destroyed and recreated again
+    at the tap of a button by some higher civilisation that sees you as no more than
+    a few pixels? '
+  - Is that true?
+  - 'Truth is relative to the world in which you exist in. '
+  - What are you talking about?
+  - Is everything a struggle with you?
+  - You can't say unsubstantiated facts and then call me crazy for questioning you.
+  - And here I was thinking you're worried about making a scene.
+  - I'm just trying to get home!
+  - 'Why are you so attached to that experience? All you do is walk around in circles
+    in your head worrying about things that generally NEvER happen as you overthinked. '
+  - Will I be able to get back if I go with you?
+  - "The universe is a self repeating fractal, whatever life you were living in this
+    world you will somehow replicate in your new one. There is and isn\u2019t a no
+    normal. Every world that exists contains this moment right now. "
+  - Where are you getting this stuff?
+  - 'Think about it though. The solar system and the arrangemnt of nuclear molecules
+    looks kinda similar. Maybe the sun is the nucleus of our universe and then the
+    pattern extends further and further. Look up solar system and atom arrangement. '
+  - I have no reason to trust this.
+  typingSpeed: 0.02
+  continueButton: {fileID: 0}
