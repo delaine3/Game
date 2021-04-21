@@ -276,6 +276,10 @@ PrefabInstance:
       propertyPath: m_enableVertexGradient
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 1887056526379771748, guid: 8396be67834c541a6b0e1c6da42a308e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1887056526650061009, guid: 8396be67834c541a6b0e1c6da42a308e, type: 3}
       propertyPath: m_RootOrder
       value: 2
@@ -323,6 +327,10 @@ PrefabInstance:
     - target: {fileID: 1887056526650061011, guid: 8396be67834c541a6b0e1c6da42a308e, type: 3}
       propertyPath: m_Name
       value: GlobalPlayer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1887056527187519468, guid: 8396be67834c541a6b0e1c6da42a308e, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8396be67834c541a6b0e1c6da42a308e, type: 3}
