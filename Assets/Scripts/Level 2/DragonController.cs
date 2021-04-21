@@ -49,21 +49,7 @@ public class DragonController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-          if (hasPowerUp)
-        {
-            //powerup.SetActive(true);
-            //powerup.transform.position = transform.position;
-
-
-            powerUpTime -= Time.deltaTime;
-            Debug.Log("Time: "+powerUpTime);
-
-            if (powerUpTime < 0)
-                Debug.Log("No PowerUp");
-                //hasPowerUp = false;
-                //powerup.SetActive(false);
-                powerUpTime = 2.0f;
-        }
+       
         // While space is pressed and game is not over float up
         if (Input.GetKey(KeyCode.Space))
         {
@@ -83,7 +69,7 @@ public class DragonController : MonoBehaviour
     private void OnCollisionEnter(Collision other)
     {
         // if player collides with bomb, explode
-        if (other.gameObject.CompareTag("Rock") && !hasPowerUp)
+        if (other.gameObject.CompareTag("Rock"))
         {
             //explosionParticle.Play();
             Destroy(other.gameObject);
@@ -114,6 +100,24 @@ public class DragonController : MonoBehaviour
 
             globalPlayer.ChangeHealth(1);
         
+        }
+
+         else if (other.gameObject.CompareTag("water"))
+        {
+            globalPlayer.ChangeSelfCare(5);
+            GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+
+        }
+
+        else if (other.gameObject.CompareTag("sun"))
+        {
+            globalPlayer.ChangePositiveEnergy(4);
+
+        }
+
+          else if (other.gameObject.CompareTag("nutrients"))
+        {
+            globalPlayer.ChangePerseverance(3);
         }
 
     }

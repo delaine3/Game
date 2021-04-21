@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 3237524675798243143}
   - component: {fileID: 3237524675798243144}
   - component: {fileID: 1563340844}
+  - component: {fileID: -3831165168076363995}
   m_Layer: 0
   m_Name: water_cloud_level_1 1
   m_TagString: water
@@ -29,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3237524675798243147}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 7.7, y: 6.21, z: -6.11}
+  m_LocalPosition: {x: 7.7, y: 10.21, z: -6.11}
   m_LocalScale: {x: 0.3, y: 0.2, z: 0.2}
   m_Children: []
   m_Father: {fileID: 0}
@@ -122,3 +123,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+--- !u!54 &-3831165168076363995
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3237524675798243147}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 4
+  m_CollisionDetection: 0

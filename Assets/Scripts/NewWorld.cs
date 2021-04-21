@@ -37,6 +37,10 @@ public class NewWorld : MonoBehaviour
            
             globalPlayer.isInHomePlanet = false;
             globalPlayer.theScene += 1;
+            if(globalPlayer.theScene == 4)
+            {
+                globalPlayer.flowerCanvas.SetActive(true);
+            }
             GameManager.Instance.LoadThisScene(globalPlayer.worlds[globalPlayer.theScene]);
             GameManager.Instance.UnLoadThisScene("HomeUniverse");
             

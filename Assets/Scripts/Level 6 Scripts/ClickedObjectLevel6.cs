@@ -9,6 +9,13 @@ public class ClickedObjectLevel6 : MonoBehaviour
     private float minX = -4.0f; 
     private float minY = -4.0f; 
     public float timeOnScreen = 1.5f;
+    GlobalPlayer globalPlayer;
+    public int changeInPositiveEnergy;
+    public int changeInPerservearance;
+    public int changeInSelfCare;
+
+    
+
  
 
     void Start()
@@ -16,6 +23,9 @@ public class ClickedObjectLevel6 : MonoBehaviour
         gameManager = GameObject.Find("GameManagerLeve6").GetComponent<GameManagerLeve6>();
 
         transform.position = RandomInstantatePosition(); 
+
+        //Get the Global Player Script
+        globalPlayer = GameObject.Find("GlobalPlayer").GetComponent<GlobalPlayer>();
 
     }
 
@@ -25,6 +35,12 @@ public class ClickedObjectLevel6 : MonoBehaviour
     
             Destroy(gameObject);
             Fireworks();
+            globalPlayer.ChangePositiveEnergy(changeInPositiveEnergy);
+            globalPlayer.ChangePerseverance(changeInPerservearance);
+            globalPlayer.ChangeSelfCare(changeInSelfCare);
+
+
+
                
     }
 

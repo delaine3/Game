@@ -29,13 +29,14 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     public TMP_Text  perseveranceText;
 
     //Inventory
-    int currentHomePlanetItems;
-    public TMP_Text  homePlanetItemsText;
+    int currentKindness;
+    public TMP_Text  kindnessText;
 
     //Dreams
     int numberOfDreams = 1;
     public TMP_Text  dreamsText;
 
+    public GameObject flowerCanvas;
 
 
     //love
@@ -74,10 +75,11 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
         currentPositiveEnergy = 100;   
         currentPerseverance = 100;   
         currentLove = 0; 
-        currentHomePlanetItems = 0;
+        currentKindness = 0;
 
         gameOverText.enabled = false;
         winText.enabled = false;
+        flowerCanvas.SetActive(false);
         DontDestroyOnLoad(gameObject);
         gameOver = false;
         playerAudio = GetComponent<AudioSource>();
@@ -183,11 +185,11 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
         
     }
 
-    public void ChangeHomePlanetItems(int amount)
+    public void ChangeKindness(int amount)
     {
         playerAudio.PlayOneShot(loveSound, 0.90f);
-        currentHomePlanetItems = currentHomePlanetItems + amount;
-        homePlanetItemsText.text = "Home Planet Items " + currentHomePlanetItems;
+        currentKindness = currentKindness + amount;
+        kindnessText.text = "Kindness " + currentKindness;
     }
 
     public void ChangeDreams(int amount)
@@ -210,7 +212,7 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     {
         playerAudio.PlayOneShot(loveSound, 0.90f);
         currentPerseverance= currentPerseverance + amount;
-        perseveranceText.text = "Nutrients " + currentPerseverance;
+        perseveranceText.text = "Perserverance " + currentPerseverance;
         
     }
 

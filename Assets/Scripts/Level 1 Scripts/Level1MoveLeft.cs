@@ -5,13 +5,11 @@ using UnityEngine;
 public class Level1MoveLeft : MonoBehaviour
 {
     private float speed = 30;
-    private PlayerControllerLevel1 playerControllerScript;
     private float leftBound = -15;
 
     // Start is called before the first frame update
     void Start()
     {
-        playerControllerScript = GameObject.Find("Player").GetComponent<PlayerControllerLevel1>();
     }
 
     // Update is called once per frame

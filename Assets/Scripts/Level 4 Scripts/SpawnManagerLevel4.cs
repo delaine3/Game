@@ -14,7 +14,7 @@ public class SpawnManagerLevel4 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
+        InvokeRepeating("SpawnItem", startDelay, spawnInterval);
     }
 
     // Update is called once per frame
@@ -24,7 +24,7 @@ public class SpawnManagerLevel4 : MonoBehaviour
         
     }
 
-    void SpawnRandomAnimal() {
+    void SpawnItem() {
 
         //Random Spawn Position
         Vector3 spawnPos = new Vector3(Random.Range(-spawnRangeX, spawnRangeX), 4, Random.Range(-spawnRangeZ, spawnRangeZ));

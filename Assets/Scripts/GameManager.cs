@@ -21,7 +21,6 @@ Objectives for Pause mode
     -Pause simulation while in pause mode
     -Modify cursor to use pointer when in pause mode
 
-
 */
 //This class extends the Singleton class.
 public class GameManager : Singleton<GameManager>
@@ -50,6 +49,8 @@ GameMode _currentGameMode = GameMode.PREGAME;
 private string _thisLevelIs = string.Empty;
 
 private GlobalPlayer globalPlayer;
+
+bool playCalled;
 
 
 
@@ -82,6 +83,8 @@ private void Start()
 
     //Get the Global Player Script
     globalPlayer = GameObject.Find("GlobalPlayer").GetComponent<GlobalPlayer>();
+
+    playCalled = false;
 
 }
 
@@ -236,7 +239,16 @@ public void UnLoadThisScene(string sceneName)
 
     public void Play()
     {
-        LoadThisScene("Beginning");
+        if(playCalled == false){
+
+            LoadThisScene("Beginning");
+                                            globalPlayer.flowerCanvas.SetActive(true);
+
+                    playCalled = true;
+
+
+       
+        }
     }
 
     public void TogglePause()

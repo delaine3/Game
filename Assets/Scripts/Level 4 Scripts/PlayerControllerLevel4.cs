@@ -52,52 +52,68 @@ public class PlayerControllerLevel4 : MonoBehaviour
         {
             //Launch projectile from the player
             Instantiate(projectilePrefab, transform.position, transform.rotation * Quaternion.Euler(Random.Range(-30.0f, -10.0f), 0, 0));
-        }
+            Instantiate(projectilePrefab, transform.position, transform.rotation * Quaternion.Euler(Random.Range(-30.0f, -10.0f), Random.Range(-30.0f, -10.0f), 0));
 
-           if (Input.GetKey(KeyCode.O) && sceneLoaded == false)
-        {
-            sceneLoaded = true;
-            GameManager.Instance.LoadThisScene("Level 5");
-            GameManager.Instance.UnLoadThisScene("Level 4");
         }
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void OnCollisionEnter(Collision other)
     {
-        if (other.CompareTag("PowerUp"))
+        // if player collides with bomb, explode
+        if (other.gameObject.CompareTag("Enemy"))
         {
-           // hasPowerUp = true;
+            //explosionParticle.Play();
             Destroy(other.gameObject);
-            //powerupIndicator.gameObject.SetActive(true);
-        }
-        StartCoroutine(PowerupCountdownRoutine());
-    }
-
-    private void OnCollisionEnter(Collision collision)
-    {
-        if (collision.gameObject.CompareTag("Enemy") && hasPowerUp)
-        {
-            Rigidbody enemyRigidBody = collision.gameObject.GetComponent<Rigidbody>();
-
-            //Fly away from the player
-            Vector3 awayFromPlayer = (collision.gameObject.transform.position - transform.position);
-
-            //enemyRigidBody.AddForce(awayFromPlayer * powerUpStrength, ForceMode.Impulse);
-        }
-
-        if (collision.gameObject.CompareTag("Enemy") && !hasPowerUp)
-        {
             globalPlayer.ChangeHealth(-1);
-           
+        } 
+
+        else if (other.gameObject.CompareTag("Gold"))
+        {
+            Destroy(other.gameObject);
+            globalPlayer.ChangeLove(10);
+
+        }
+        else if (other.gameObject.CompareTag("Silver"))
+        {
+            Destroy(other.gameObject);
+            globalPlayer.ChangeLove(7);
+
+        }
+        else if (other.gameObject.CompareTag("Copper"))
+        {
+            Destroy(other.gameObject);
+            globalPlayer.ChangeLove(3);
+
+        }
+
+        else if (other.gameObject.CompareTag("Life"))
+        {
+
+            globalPlayer.ChangeHealth(1);
+        
+        }
+
+         else if (other.gameObject.CompareTag("water"))
+        {
+            globalPlayer.ChangeSelfCare(5);
+            GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+
+        }
+
+        else if (other.gameObject.CompareTag("sun"))
+        {
+            globalPlayer.ChangePositiveEnergy(4);
+
+        }
+
+          else if (other.gameObject.CompareTag("nutrients"))
+        {
+            globalPlayer.ChangePerseverance(3);
         }
 
     }
 
-    IEnumerator PowerupCountdownRoutine() {
-
-        yield return new WaitForSeconds(7);
-        hasPowerUp = false;
-        //powerupIndicator.gameObject.SetActive(false);
-    }
 }
+
+

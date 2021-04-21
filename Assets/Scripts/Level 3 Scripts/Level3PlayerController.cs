@@ -49,5 +49,51 @@ public class Level3PlayerController : MonoBehaviour
             Destroy(other.gameObject);
             globalPlayer.ChangeHealth(-1);
         } 
+
+        else if (other.gameObject.CompareTag("Gold"))
+        {
+            Destroy(other.gameObject);
+            globalPlayer.ChangeLove(10);
+
+        }
+        else if (other.gameObject.CompareTag("Silver"))
+        {
+            Destroy(other.gameObject);
+            globalPlayer.ChangeLove(7);
+
+        }
+        else if (other.gameObject.CompareTag("Copper"))
+        {
+            Destroy(other.gameObject);
+            globalPlayer.ChangeLove(3);
+
+        }
+
+        else if (other.gameObject.CompareTag("Life"))
+        {
+
+            globalPlayer.ChangeHealth(1);
+        
+        }
+
+         else if (other.gameObject.CompareTag("water"))
+        {
+            globalPlayer.ChangeSelfCare(5);
+            GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
+
+        }
+
+        else if (other.gameObject.CompareTag("sun"))
+        {
+            globalPlayer.ChangePositiveEnergy(4);
+
+        }
+
+          else if (other.gameObject.CompareTag("nutrients"))
+        {
+            globalPlayer.ChangePerseverance(3);
+        }
+
     }
 }
+

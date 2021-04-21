@@ -7,7 +7,7 @@ public class HomePlanetPlayer : MonoBehaviour
     Rigidbody m_Rigidbody;
     float m_Speed;
     GlobalPlayer globalPlayer;
-    public GameObject pet;
+    public GameObject dream;
 
 
     void Start()
@@ -45,14 +45,14 @@ public class HomePlanetPlayer : MonoBehaviour
 
         } 
 
-          //Get new pet
+          //Get new dream
         if (Input.GetKeyDown(KeyCode.P) && (globalPlayer.currentPerseverance >= 20) && (globalPlayer.currentPositiveEnergy >= 20) && (globalPlayer.currentSelfCare >= 20))
         {
             globalPlayer.ChangeSelfCare(-20);
             globalPlayer.ChangePositiveEnergy(-20);
             globalPlayer.ChangePerseverance(-20);
     
-            Instantiate(pet, transform.position, transform.rotation);
+            Instantiate(dream, transform.position, transform.rotation);
              globalPlayer.ChangeDreams(1);
         }
 
@@ -72,7 +72,7 @@ public class HomePlanetPlayer : MonoBehaviour
 
         if (other.gameObject.CompareTag("exports"))
         {
-            globalPlayer.ChangeHomePlanetItems(2);
+            globalPlayer.ChangeKindness(2);
         }
 
     
