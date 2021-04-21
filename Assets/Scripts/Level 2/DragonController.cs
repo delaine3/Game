@@ -93,19 +93,19 @@ public class DragonController : MonoBehaviour
         else if (other.gameObject.CompareTag("Gold"))
         {
             Destroy(other.gameObject);
-            globalPlayer.ChangeGold(10);
+            globalPlayer.ChangeLove(10);
 
         }
         else if (other.gameObject.CompareTag("Silver"))
         {
             Destroy(other.gameObject);
-            globalPlayer.ChangeGold(7);
+            globalPlayer.ChangeLove(7);
 
         }
         else if (other.gameObject.CompareTag("Copper"))
         {
             Destroy(other.gameObject);
-            globalPlayer.ChangeGold(3);
+            globalPlayer.ChangeLove(3);
 
         }
 

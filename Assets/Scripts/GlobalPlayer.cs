@@ -19,28 +19,28 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     public Sprite emptyHeart;
     
     //Resources
-    public int currentWater = 100;    
-    public TMP_Text  waterText;
+    public int currentSelfCare = 100;    
+    public TMP_Text  selfCareText;
 
-    public int currentSun = 100;    
-    public TMP_Text  sunText;
+    public int currentPositiveEnergy = 100;    
+    public TMP_Text  positiveEnergyText;
 
-    public int currentNutrients = 100;    
-    public TMP_Text  nutrientsText;
+    public int currentPerseverance = 100;    
+    public TMP_Text  perseveranceText;
 
     //Inventory
     int currentHomePlanetItems;
     public TMP_Text  homePlanetItemsText;
 
-    //Pets
-    int numberOfpets = 1;
-    public TMP_Text  petsText;
+    //Dreams
+    int numberOfDreams = 1;
+    public TMP_Text  dreamsText;
 
 
 
-    //Gold
-    public int currentGold;    
-    public TMP_Text  goldText;
+    //love
+    public int currentLove;    
+    public TMP_Text  loveText;
 
 
     //Score
@@ -57,7 +57,7 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     public int theScene;
 
     //Sound
-    public AudioClip goldSound;
+    public AudioClip loveSound;
     public AudioClip crashSound;
     private AudioSource playerAudio;
     public bool isInHomePlanet;   
@@ -70,10 +70,10 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     void Start()
     {
         currentHealth = maxHealth;
-        currentWater = 100;
-        currentSun = 100;   
-        currentNutrients = 100;   
-        currentGold = 0; 
+        currentSelfCare = 100;
+        currentPositiveEnergy = 100;   
+        currentPerseverance = 100;   
+        currentLove = 0; 
         currentHomePlanetItems = 0;
 
         gameOverText.enabled = false;
@@ -81,10 +81,10 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
         DontDestroyOnLoad(gameObject);
         gameOver = false;
         playerAudio = GetComponent<AudioSource>();
-        waterText.text = "Water " + currentWater;
-        nutrientsText.text = "Nutrients " + currentNutrients;
-        sunText.text = "Sun " + currentSun;
-        petsText.text = "Pets " + numberOfpets;
+        selfCareText.text = "Self Care " + currentSelfCare;
+        perseveranceText.text = "Perseverance " + currentPerseverance;
+        positiveEnergyText.text = "Positive Energy " + currentPositiveEnergy;
+        dreamsText.text = "Dreams " + numberOfDreams;
 
         theScene = (-1);
 
@@ -122,10 +122,10 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
                 isInvincible = false;
         }
 
-        if ((Input.GetKeyDown(KeyCode.L)) && (currentGold >= 100))
+        if ((Input.GetKeyDown(KeyCode.L)) && (currentLove >= 100))
         {
            
-           ChangeGold(-100);
+           ChangeLove(-100);
            currentHealth = maxHealth;
         }
         
@@ -136,10 +136,10 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     {
        currentHealth = maxHealth;
        gameOverText.enabled = false;
-       currentGold = 0;
-       currentNutrients = 0;
-       currentSun = 0;
-       currentWater = 0;
+       currentLove = 0;
+       currentPerseverance = 0;
+       currentPositiveEnergy = 0;
+       currentSelfCare = 0;
        
     }
 
@@ -158,7 +158,7 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
 
         if(amount == 1)
         {
-            playerAudio.PlayOneShot(goldSound, 1.0f);
+            playerAudio.PlayOneShot(loveSound, 1.0f);
         }else{
             playerAudio.PlayOneShot(crashSound, 1.0f);
 
@@ -175,50 +175,50 @@ public class GlobalPlayer : Singleton<GlobalPlayer>
     }
 
 //Change Water amount
-    public void ChangeWater(int amount)
+    public void ChangeSelfCare(int amount)
     {
-        playerAudio.PlayOneShot(goldSound, 0.90f);
-        currentWater = currentWater + amount;
-        waterText.text = "Water " + currentWater;
+        playerAudio.PlayOneShot(loveSound, 0.90f);
+        currentSelfCare = currentSelfCare + amount;
+        selfCareText.text = "Self Care " + currentSelfCare;
         
     }
 
     public void ChangeHomePlanetItems(int amount)
     {
-        playerAudio.PlayOneShot(goldSound, 0.90f);
+        playerAudio.PlayOneShot(loveSound, 0.90f);
         currentHomePlanetItems = currentHomePlanetItems + amount;
         homePlanetItemsText.text = "Home Planet Items " + currentHomePlanetItems;
     }
 
-    public void ChangePets(int amount)
+    public void ChangeDreams(int amount)
     {
-        playerAudio.PlayOneShot(goldSound, 0.90f);
-        numberOfpets = numberOfpets + amount;
-        petsText.text = "Pets " + numberOfpets;
+        playerAudio.PlayOneShot(loveSound, 0.90f);
+        numberOfDreams = numberOfDreams + amount;
+        dreamsText.text = "Dreams " + numberOfDreams;
     }
 
-    //Change Gold amount
-    public void ChangeGold(int amount)
+    //Change love amount
+    public void ChangeLove(int amount)
     {
-        playerAudio.PlayOneShot(goldSound, 0.90f);
-        currentGold = currentGold + amount;
-        goldText.text = "Gold " + currentGold;
+        playerAudio.PlayOneShot(loveSound, 0.90f);
+        currentLove = currentLove + amount;
+        loveText.text = "Love " + currentLove;
         
     }
 
-    public void ChangeNutrients(int amount)
+    public void ChangePerseverance(int amount)
     {
-        playerAudio.PlayOneShot(goldSound, 0.90f);
-        currentNutrients= currentNutrients + amount;
-        nutrientsText.text = "Nutrients " + currentNutrients;
+        playerAudio.PlayOneShot(loveSound, 0.90f);
+        currentPerseverance= currentPerseverance + amount;
+        perseveranceText.text = "Nutrients " + currentPerseverance;
         
     }
 
-    public void ChangeSun(int amount)
+    public void ChangePositiveEnergy(int amount)
     {
-        playerAudio.PlayOneShot(goldSound, 0.90f);
-        currentSun = currentSun + amount;
-        sunText.text = "Sun " + currentSun;
+        playerAudio.PlayOneShot(loveSound, 0.90f);
+        currentPositiveEnergy = currentPositiveEnergy + amount;
+        positiveEnergyText.text = "Positive Energy " + currentPositiveEnergy;
         
     }
 

@@ -46,23 +46,23 @@ public class HomePlanetPlayer : MonoBehaviour
         } 
 
           //Get new pet
-        if (Input.GetKeyDown(KeyCode.P) && (globalPlayer.currentNutrients >= 20) && (globalPlayer.currentSun >= 20) && (globalPlayer.currentWater >= 20))
+        if (Input.GetKeyDown(KeyCode.P) && (globalPlayer.currentPerseverance >= 20) && (globalPlayer.currentPositiveEnergy >= 20) && (globalPlayer.currentSelfCare >= 20))
         {
-            globalPlayer.ChangeWater(-20);
-            globalPlayer.ChangeSun(-20);
-            globalPlayer.ChangeNutrients(-20);
+            globalPlayer.ChangeSelfCare(-20);
+            globalPlayer.ChangePositiveEnergy(-20);
+            globalPlayer.ChangePerseverance(-20);
     
             Instantiate(pet, transform.position, transform.rotation);
-             globalPlayer.ChangePets(1);
+             globalPlayer.ChangeDreams(1);
         }
 
           //Buy resources
-        if ((Input.GetKeyDown(KeyCode.B)) && (globalPlayer.currentGold >= 40))
+        if ((Input.GetKeyDown(KeyCode.B)) && (globalPlayer.currentLove >= 40))
         {
-            globalPlayer.ChangeWater(10);
-            globalPlayer.ChangeSun(10);
-            globalPlayer.ChangeNutrients(10);
-            globalPlayer.ChangeGold(-40);
+            globalPlayer.ChangeSelfCare(10);
+            globalPlayer.ChangePositiveEnergy(10);
+            globalPlayer.ChangePerseverance(10);
+            globalPlayer.ChangeLove(-40);
         }
         
     }

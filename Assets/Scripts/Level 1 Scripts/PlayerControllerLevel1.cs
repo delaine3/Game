@@ -64,20 +64,20 @@ public class PlayerControllerLevel1 : MonoBehaviour
 
         else if (collision.gameObject.CompareTag("water"))
         {
-            globalPlayer.ChangeWater(5);
+            globalPlayer.ChangeSelfCare(5);
             GetComponent<Renderer>().material.color = Random.ColorHSV(0f, 1f, 1f, 1f, 0.5f, 1f);
 
         }
 
         else if (collision.gameObject.CompareTag("sun"))
         {
-            globalPlayer.ChangeSun(4);
+            globalPlayer.ChangePositiveEnergy(4);
 
         }
 
           else if (collision.gameObject.CompareTag("nutrients"))
         {
-            globalPlayer.ChangeNutrients(3);
+            globalPlayer.ChangePerseverance(3);
         }
 
 
@@ -93,7 +93,7 @@ public class PlayerControllerLevel1 : MonoBehaviour
         {
            // fireworksParticle.Play();
             Destroy(collision.gameObject);
-            globalPlayer.ChangeGold(10);
+            globalPlayer.ChangeLove(10);
 
         }
 
@@ -102,7 +102,7 @@ public class PlayerControllerLevel1 : MonoBehaviour
         {
             //fireworksParticle.Play();
             Destroy(collision.gameObject);
-            globalPlayer.ChangeGold(7);
+            globalPlayer.ChangeLove(7);
 
         }
 
@@ -111,7 +111,7 @@ public class PlayerControllerLevel1 : MonoBehaviour
         {
            // fireworksParticle.Play();
             Destroy(collision.gameObject);
-            globalPlayer.ChangeGold(3);
+            globalPlayer.ChangeLove(3);
 
         }
     }

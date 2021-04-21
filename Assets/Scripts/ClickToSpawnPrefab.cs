@@ -26,14 +26,14 @@ using System.Collections;
   
               if (Physics.Raycast(ray, out hit))
               {
-                  if (hit.transform.name == "floor" &&  globalPlayer.currentWater > 10 && globalPlayer.currentSun > 10 && globalPlayer.currentNutrients > 10)
+                  if (hit.transform.name == "floor" &&  globalPlayer.currentSelfCare > 10 && globalPlayer.currentPositiveEnergy > 10 && globalPlayer.currentPerseverance > 10)
                   {
                      Vector3 myVector = new Vector3(hit.point.x, hit.point.y + 10, hit.point.z);
                       Instantiate(prefab, myVector, Quaternion.identity);
                       print("My object is clicked by mouse");
-                      globalPlayer.ChangeNutrients(-10);
-                      globalPlayer.ChangeSun(-10);
-                      globalPlayer.ChangeWater(-10);
+                      globalPlayer.ChangePerseverance(-10);
+                      globalPlayer.ChangePositiveEnergy(-10);
+                      globalPlayer.ChangeSelfCare(-10);
 
                   }
               }

@@ -54,7 +54,7 @@ public class PetHealth : MonoBehaviour
     {
         foodItem = GameObject.FindGameObjectWithTag("Food");
         if(food < 0){
-            globalPlayer.ChangePets(-1);
+            globalPlayer.ChangeDreams(-1);
             Destroy(gameObject);
         }
       
