@@ -241,7 +241,7 @@ public void UnLoadThisScene(string sceneName)
     {
         if(playCalled == false){
 
-            LoadThisScene("Beginning");
+            LoadThisScene("Level 6");
                                             globalPlayer.flowerCanvas.SetActive(true);
 
                     playCalled = true;

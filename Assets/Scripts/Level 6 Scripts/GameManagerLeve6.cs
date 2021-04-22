@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class GameManagerLeve6 : MonoBehaviour
 {
-    public GameObject titleScreen;
+    //public GameObject titleScreen;
     public List<GameObject> clickPrefabs;
 
     private float spawnRate = 2.5f;
@@ -17,13 +17,22 @@ public class GameManagerLeve6 : MonoBehaviour
     private float minValueY = -4.00f; 
     private float timeLeft;
 
-    // Start the game, remove title screen and change spawnRate according to the tier button clicked
-    public void StartGame(int tier)
+    public int levelInt;
+    public GameObject inputField;
+    public GameObject textToDisplay;
+
+      void Start()
     {
-        spawnRate /= tier;
+        levelInt = int.Parse(inputField.GetComponent<TMP_Text>().text);
+
+    }
+    // Start the game, remove title screen and change spawnRate according to the leverInt button clicked
+    public void StartGame(int leverInt)
+    {
+        spawnRate /= leverInt;
         isGameActive = true;
         StartCoroutine(PrefabOnScreen());
-        titleScreen.SetActive(false);
+        //titleScreen.SetActive(false);
     }
 
 
