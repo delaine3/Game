@@ -4455,3 +4455,11 @@ System memory in use after: 306.0 MB.
 Unloading 4 unused Assets to reduce memory usage. Loaded Objects now: 1903.
 Total: 2.340735 ms (FindLiveObjects: 0.342628 ms CreateObjectMapping: 0.046885 ms MarkObjects: 1.921900 ms  DeleteObjects: 0.027731 ms)
 
+========================================================================
+Received Import Request.
+  Time since last request: 861.020037 seconds.
+  path: Assets/Game Manager/Prefabs/UIManager.prefab
+  artifactKey: Guid(54c97bc568a963f4d945c01fa1a75f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Game Manager/Prefabs/UIManager.prefab using Guid(54c97bc568a963f4d945c01fa1a75f19) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd058801aa65df83854841f77c7eb1948') in 0.191095 seconds
+  Import took 0.214894 seconds .
+
